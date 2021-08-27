@@ -35,9 +35,9 @@ const loadMore = (foodId) =>{
 }
 
 const displayMore = (item) =>{
-    const mealContainer = document.getElementById('meals-container');
+    const mealDetail = document.getElementById('meal-detail');
     const moreDiv = document.createElement = 'div';
     moreDiv.innerHTML = `Info : ${item.strArea}`
-    mealContainer.appendChild(moreDiv);
+    mealDetail.appendChild(moreDiv);
 
 }
