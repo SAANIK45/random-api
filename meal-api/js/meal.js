@@ -11,6 +11,7 @@ const loadMeal = () => {
 
 const searchMeals = (meal) =>{
     const mealContainer = document.getElementById('meals-container');
+    mealContainer.textContent = '';
     for(const food of meal){
         // console.log(food)
         const div = document.createElement('div');
@@ -35,9 +36,20 @@ const loadMore = (foodId) =>{
 }
 
 const displayMore = (item) =>{
-    const mealDetail = document.getElementById('meal-detail');
-    const moreDiv = document.createElement = 'div';
-    moreDiv.innerHTML = `Info : ${item.strArea}`
-    mealDetail.appendChild(moreDiv);
+    console.log(item);
+    const mealContainer = document.getElementById('meal-detail');
+    mealContainer.textContent =' ';
+    const mealDiv = document.createElement('div');
+    mealDiv.innerHTML = `
+    <div class="card-body">
+                <img src="${item.strMealThumb}" class="card-img-top" alt="...">
+                <h5 class="card-title">${item.strMeal}</h5>
+                <p class="card-text">${item.strInstructions.slice(0,250)}</p>
+                <h4>Item Id : ${item.idMeal}</h4>
+            </div>
+    
+    `;
+    mealContainer.appendChild(mealDiv);
+    console.log(mealDiv);
 
 }
