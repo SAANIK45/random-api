@@ -9,9 +9,16 @@ const loadMeal = () => {
     }else{
         //Api calling
         const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`;
+        //using try catch
+        try{
         fetch(url)
         .then(res => res.json())
         .then(data => searchMeals(data.meals))
+        }
+        catch(error){
+            console.log(error);
+        }
+        
     }
 }
 //get the data and loop through and add element
